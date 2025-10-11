@@ -1,0 +1,13 @@
+.venv
+__pycache__
+*.pyc
+mlruns
+.git
+data
+.DS_Store
+zip_raw
+zip raw
+*.mat
+*.ipynb
+*.pdf
+models/spark_pipeline

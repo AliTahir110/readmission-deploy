@@ -1,0 +1,45 @@
+name: ci-cd
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *" # nightly retrain demo
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      # Login to GHCR or your registry (set GHCR_TOKEN in repo secrets)
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GHCR_TOKEN }}
+      - name: Build & push image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/readmission-api:latest .
+          docker push ghcr.io/${{ github.repository }}/readmission-api:latest
+
+  retrain:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Retrain (Spark placeholder)
+        run: |
+          echo "This is a placeholder. Run src/train_spark.py on your Spark infra or Databricks job."
+          # python src/train_spark.py
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: models
+          path: models/

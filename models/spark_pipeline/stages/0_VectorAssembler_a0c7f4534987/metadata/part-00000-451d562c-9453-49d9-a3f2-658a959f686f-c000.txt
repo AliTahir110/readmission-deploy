@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1760147338696,"sparkVersion":"4.0.1","uid":"VectorAssembler_a0c7f4534987","paramMap":{"outputCol":"features","inputCols":["time_in_hospital","n_medications","n_procedures","diag_group_id"]},"defaultParamMap":{"outputCol":"VectorAssembler_a0c7f4534987__output","handleInvalid":"error"}}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hospital Readmission Risk</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Hospital Readmission Risk</h1>
+    <p class="sub">Model: {{ model_version }}</p>
+
+    <form id="pred-form">
+      <label>
+        Time in hospital (days)
+        <input type="number" id="time_in_hospital" min="0" max="60" value="3" required />
+      </label>
+
+      <label>
+        # Medications
+        <input type="number" id="n_medications" min="0" max="400" value="12" required />
+      </label>
+
+      <label>
+        # Procedures
+        <input type="number" id="n_procedures" min="0" max="40" value="2" required />
+      </label>
+
+      <label>
+        Primary Diagnosis
+        <select id="diag_group">
+          <option value="other">Other / Unknown</option>
+          <option value="circulatory">Circulatory</option>
+          <option value="respiratory">Respiratory</option>
+          <option value="digestive">Digestive</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="injury">Injury</option>
+          <option value="musculoskeletal">Musculoskeletal</option>
+          <option value="genitourinary">Genitourinary</option>
+          <option value="neoplasms">Neoplasms</option>
+        </select>
+      </label>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    <div id="result" class="result hidden">
+      <div id="risk" class="risk"></div>
+      <div id="prob" class="prob"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

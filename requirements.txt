@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pydantic
+mlflow
+scikit-learn
+pandas
+numpy
+joblib
+# Spark used in training; install in your environment where Spark is available
+pyspark
+
+fastapi
+uvicorn
+pydantic
+joblib
+scikit-learn

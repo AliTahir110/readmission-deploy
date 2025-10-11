@@ -1,0 +1,19 @@
+
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+
+mlruns/
+data/
+zip_raw/
+zip raw/
+*.mat
+*.ipynb
+*.pdf
+
+# OS
+.DS_Store

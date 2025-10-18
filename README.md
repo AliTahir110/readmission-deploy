@@ -1,4 +1,4 @@
-# Hospital Readmission — ML Engineer Interview Scaffold
+# Hospital Readmission — ML 
 
 This repo turns your Spark-based readmission project into a **cloud-ready ML pipeline** with:
 - **FastAPI** inference (Dockerized)
@@ -81,11 +81,4 @@ pytest -q
 
 ---
 
-## Files to customize
 
-- `src/train_spark.py`: paste your Spark feature engineering, sampling, partitioning, and training code.
-- `api/app.py`: if you want to add full preprocessing parity, persist a `preprocess.pkl` and load it here.
-- `requirements.txt`: pin versions you use.
-- `.github/workflows/ci-cd.yml`: connect to your container registry or cloud deploy.
-
-Good luck — this is interview-ready once you plug your code + screenshots (Swagger UI, MLflow runs, CI success, cloud endpoint test).

@@ -7,7 +7,7 @@ This repo turns your Spark-based readmission project into a **cloud-ready ML pip
 - **Spark** training entrypoint (paste your code where marked)
 - **Basic tests** and **schema validation**
 
-> Paste your existing Spark logic from `bigdata_v1.py` into `src/train_spark.py` (look for `# === PASTE YOUR CODE HERE ===` blocks).
+> Paste your existing Spark logic from `bigdata_v1.py` into `src/train_spark.py` (look for  blocks).
 
 ---
 
